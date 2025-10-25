@@ -68,3 +68,17 @@ def test_get_nth_fibonacci_ten():
 
     # Assert
     assert result == 55
+
+
+def test_area_of_circle_negative_radius_raises():
+    """area_of_circle should raise for negative radius."""
+    with pytest.raises(ValueError) as excinfo:
+        area_of_circle(-1)
+    assert str(excinfo.value) == "Radius cannot be negative"
+
+
+def test_get_nth_fibonacci_negative_n_raises():
+    """get_nth_fibonacci should raise for negative n."""
+    with pytest.raises(ValueError) as excinfo:
+        get_nth_fibonacci(-5)
+    assert str(excinfo.value) == "n cannot be negative"
